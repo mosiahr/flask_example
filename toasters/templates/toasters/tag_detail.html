@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tag
+{% endblock %}
+
+{% block content_title %}
+    Toasters for "{{ tag.name }}"
+{% endblock %}
+
+{% block content %}
+    {% for toaster in toasters %}
+        <p>
+        <a href="{{ url_for('toasters.toaster_detail', id=toaster.id) }}">{{ toaster.name }}</a>
+        </p>
+
+    {% endfor %}
+{% endblock %}

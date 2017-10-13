@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Detail toaster
+{% endblock %}
+
+{% block content_title %}
+    {{ toaster.name }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="tags">
+        {% for tag in tags %}
+            <span class="badge"><a href="{{ url_for('toasters.tag_detail', slug=tag.slug ) }}">{{ tag.name }}</a> </span>
+        {% endfor %}
+    </div>
+
+
+    <p>{{ toaster.address }}</p>
+    <p>{{ toaster.email }}</p>
+    <p>{{ toaster.phone }}</p>
+    <p>{{ toaster.site }}</p>
+
+    <div class="description">
+    <h4>Информация о компании</h4>
+    <p>{{ toaster.description }}</p>
+
+    </div>
+
+
+{% endblock %}
